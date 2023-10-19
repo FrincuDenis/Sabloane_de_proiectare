@@ -1,9 +1,12 @@
-import element as elmm
-class subchapters:
-    def __init__(self,title):
-        self.title=title
+class SubChapter:
+    def __init__(self, name):
+        self.name = name
+        self.elements = []
 
-    def print(self):
-        print(f"Subchapter: {self.title}")
-        for elm in elmm.element:
-            elm.print()
+    def add_element(self, element):
+        self.elements.append(element)
+
+    def print_subchapter(self):
+        print(f"Subchapter name: {self.name}")
+        for element in self.elements:
+            element.print()
