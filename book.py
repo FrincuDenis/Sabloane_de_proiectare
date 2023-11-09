@@ -3,8 +3,8 @@ from chapters import Chapters
 from subchapters import SubChapter
 from element import Paragraph
 from sectiune import Section
-from proxy import ImageProxy
-from proxy import Image
+from image_proxy import ImageProxy,Image
+from paragraph_proxy import ParagraphProxy
 class Book:
     def __init__(self, title):
         self.title = title
@@ -52,18 +52,18 @@ chapter.add_subchapter(subchapter)
 # Add the chapter to the section
 section.add_chapter(chapter)
 
-
 # Add the section to the book
 book.add_section(section)
 
 # Add an author to the book
 book.add_author(author)
 
-# Print the book
 image_proxy = ImageProxy("Proxy Image", "https://en.m.wikipedia.org/wiki/File:Sunflower_from_Silesia2.jpg")
 
 # Add the ImageProxy to the subchapter
 subchapter.add_element(image_proxy)
 
-# Print the book
+# Create a ParagraphProxy and add it to the existing structure
+paragraph_proxy = ParagraphProxy("This is a proxy paragraph.")
+subchapter.add_element(paragraph_proxy)
 book.print()
