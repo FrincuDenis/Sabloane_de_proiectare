@@ -1,7 +1,12 @@
 class Element:
     def print(self):
         pass
-
+    def acceptp(self, visitor):
+        visitor.visit_concrete_element_paragraph(self)
+    def accepti(self, visitor):
+        visitor.visit_concrete_element_image(self)
+    def acceptt(self, visitor):
+        visitor.visit_concrete_element_table(self)
 
 class Paragraph(Element):
     def __init__(self, text):
